@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sales_order" resource="sales" engine="innodb" comment="Sales Flat Order">
+        <column xsi:type="decimal" name="deposit_paid" scale="4" precision="20" unsigned="false"
+                nullable="true" comment="Deposit Paid"/>
+        <column xsi:type="decimal" name="base_deposit_paid" scale="4" precision="20" unsigned="false"
+                nullable="true" comment="Base Deposit Paid"/>
+        <column xsi:type="decimal" name="deposit_balance_due" scale="4" precision="20" unsigned="false"
+                nullable="true" comment="Deposit Balance Due"/>
+        <column xsi:type="decimal" name="base_deposit_balance_due" scale="4" precision="20" unsigned="false"
+                nullable="true" comment="Base Deposit Balance Due"/>
+    </table>
+    <table name="sales_order_grid" resource="sales" engine="innodb" comment="Sales Flat Order Grid">
+        <column xsi:type="decimal" name="deposit_paid" scale="4" precision="20" unsigned="false"
+                nullable="true" comment="Deposit Paid"/>
+        <column xsi:type="decimal" name="deposit_balance_due" scale="4" precision="20" unsigned="false"
+                nullable="true" comment="Deposit Balance Due"/>
+    </table>
+</schema>

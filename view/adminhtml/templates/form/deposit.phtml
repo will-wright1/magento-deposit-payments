@@ -1,0 +1,23 @@
+<?php
+/** @var \DepositPayments\AdminDeposit\Block\Form\Deposit $block */
+$methodCode = $block->escapeHtmlAttr($block->getMethodCode());
+?>
+<fieldset class="admin__fieldset payment-method" id="payment_form_<?= /* @noEscape */ $methodCode ?>"
+          style="display:none">
+    <div class="admin__field _required">
+        <label class="admin__field-label" for="<?= /* @noEscape */ $methodCode ?>_amount">
+            <span><?= $block->escapeHtml(__('Deposit Amount')) ?></span>
+        </label>
+        <div class="admin__field-control">
+            <input type="text"
+                   id="<?= /* @noEscape */ $methodCode ?>_amount"
+                   name="payment[deposit_amount]"
+                   value="<?= $block->escapeHtmlAttr($block->getDepositAmount()) ?>"
+                   class="admin__control-text required-entry validate-number validate-greater-than-zero"
+                   autocomplete="off"/>
+            <div class="admin__field-note">
+                <?= $block->escapeHtml(__('Enter the amount already received from the customer in the order currency.')) ?>
+            </div>
+        </div>
+    </div>
+</fieldset>

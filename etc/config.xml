@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <admin_deposit>
+                <active>1</active>
+                <model>DepositPayments\AdminDeposit\Model\Payment\Deposit</model>
+                <title>Deposit payment</title>
+                <group>offline</group>
+                <order_status>processing</order_status>
+                <allowspecific>0</allowspecific>
+                <can_use_internal>1</can_use_internal>
+                <can_use_checkout>0</can_use_checkout>
+                <is_gateway>0</is_gateway>
+                <sort_order>95</sort_order>
+            </admin_deposit>
+        </payment>
+    </default>
+</config>

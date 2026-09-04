@@ -1,0 +1,16 @@
+{
+    "sales_order": {
+        "column": {
+            "deposit_paid": true,
+            "base_deposit_paid": true,
+            "deposit_balance_due": true,
+            "base_deposit_balance_due": true
+        }
+    },
+    "sales_order_grid": {
+        "column": {
+            "deposit_paid": true,
+            "deposit_balance_due": true
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<?php
+/** @var \DepositPayments\AdminDeposit\Block\Adminhtml\Order\View\DepositSummary $block */
+$order = $block->getOrder();
+?>
+<?php if ($order && $block->isDepositOrder()): ?>
+    <section class="admin__page-section deposit-payment-summary">
+        <div class="admin__page-section-title">
+            <span class="title"><?= $block->escapeHtml(__('Deposit Summary')) ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <div class="admin__page-section-item">
+                <table class="admin__table-secondary">
+                    <tbody>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Full Order Total')) ?></th>
+                        <td><?= /* @noEscape */ $block->formatPrice((float) $order->getGrandTotal()) ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Deposit Paid')) ?></th>
+                        <td><?= /* @noEscape */ $block->formatPrice((float) $order->getData('deposit_paid')) ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Balance Due')) ?></th>
+                        <td><?= /* @noEscape */ $block->formatPrice((float) $order->getData('deposit_balance_due')) ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
